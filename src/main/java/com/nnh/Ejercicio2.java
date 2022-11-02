@@ -1,26 +1,17 @@
 package com.nnh;
 
+import java.sql.Connection;
+import java.sql.Statement;
 import java.util.Scanner;
 
 public class Ejercicio2 {
-    public static void main(String[] args) {
-        int sel;
-        Scanner sc = new Scanner(System.in);
-        while(true){
-            System.out.println("Introduce la acción que desee: " +
-                    "1- Insertar tabla" +
-                    "2- Modificar tabla" +
-                    "3- Borrar tabla" +
-                    "0- Salir");
-            sel = sc.nextInt();
-            switch (sel){
-                case 1: insertar(); break;
-                case 2: modificar(); break;
-                case 3: borrar(); break;
-                default:
-                    System.out.println("Saliendo del programa");
-                    System.exit(0);
-            }
-        }
+    public static void insercion(Connection connection, Statement stmt, String qry) {
+        qry = "INSERT INTO nuno VALUES (" +
+                "100, 1978, 'Rubén Bkades, Willie Colón', 'pedro navaja');" +
+                "INSERT INTO nuno VALUES (" +
+                "200, 2004, 'Philip Sparke', 'Harlequin');" +
+                "INSERT INTO nuno VALUES (" +
+                "300, ";
+
     }
 }
