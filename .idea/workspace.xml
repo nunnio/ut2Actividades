@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f9e05da-f9b6-4716-8ece-b04e376c01ee" name="Changes" comment="">
+    <list default="true" id="0f9e05da-f9b6-4716-8ece-b04e376c01ee" name="Changes" comment="Primer Commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nnh/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nnh/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nnh/Ejercicio01.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nnh/Ejercicio1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nnh/Ejercicio1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nnh/Ejercicio2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nnh/Ejercicio2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,13 +27,6 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
   <component name="ProjectId" id="2GzMhau9IxKMQdJupqSOo5pxt7u" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -48,24 +39,9 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "F:/DAM2/ad/ideas/ut1"
+    "last_opened_file_path": "/home/ciclosm/IdeaProjects/ut1Actividades"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="ut2Actividades" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="ut2Actividades" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -75,8 +51,6 @@
       <option name="presentableId" value="Default" />
       <updated>1667387081996</updated>
       <workItem from="1667387083355" duration="5551000" />
-      <workItem from="1667404922244" duration="155000" />
-      <workItem from="1667405098060" duration="2520000" />
     </task>
     <servers />
   </component>
