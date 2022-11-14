@@ -11,18 +11,22 @@ public class App {
         Scanner sc = new Scanner(System.in);
         try {
             Connection connection = DriverManager.getConnection("jdbc:postgresql://172.18.0.2:5432/nuno","root", "root");
-            Statement stmt = connection.createStatement();
+            PreparedStatement pstmt = null;
+            Statement stmt = null;
 
             System.out.println("Creando base de datos con nombre nuno...");
             Ejercicio1.creaBBDD();
             System.out.println("Creando tabla partitura...");
             Ejercicio1.creaTabla(connection, stmt, qry);
-            System.out.println("Insertando información a tablas...");
-            Ejercicio2.insercion(connection, stmt, qry);
+
+            Ejercicio2.menu();
+
+            System.out.println("Insertando information a tablas...");
+            Ejercicio2.insercion(connection, pstmt, qry);
             qry = "SELECT * FROM nuno;";
-            rs = stmt.executeQuery(qry);
+            rs = pstmt.executeQuery(qry);
             rs.beforeFirst();
-            rs = stmt.executeQuery(Ejercicio2.insercion1(connection, stmt));
+            rs = pstmt.executeQuery(Ejercicio2.insercion1(connection, pstmt));
             int n = 3;
             while(n>0 && n<6){
                 System.out.println("Introduce la posición que desees cambiar");
@@ -34,22 +38,7 @@ public class App {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        /*while(true){
-            System.out.println("Introduce la acción que desee: " +
-                    "1- Crear base de datos" +
-                    "2- Modificar tabla" +
-                    "3- Borrar tabla" +
-                    "0- Salir");
-            sel = sc.nextInt();
-            switch (sel){
-                case 1: insertar(); break;
-                case 2: modificar(); break;
-                case 3: borrar(); break;
-                default:
-                    System.out.println("Saliendo del programa");
-                    System.exit(0);
-            }
-        }*/
+
 
 
     }
