@@ -39,7 +39,7 @@ public class Ejercicio2 {
     public static void borraPart(){
 
     }
-    public static void insercion(Connection connection, Statement stmt, String qry) {
+    public static void insercion(Connection connection, Statement stmt, String qry, ConnectionPool connectionPool) {
         qry = "INSERT INTO nuno VALUES (" +
                 "200, 1978, 'Rubén Bkades, Willie Colón', 'pedro navaja');" +
                 "INSERT INTO nuno VALUES (" +
@@ -51,7 +51,7 @@ public class Ejercicio2 {
                 "INSERT INTO nuno VALUES (" +
                 "600, 2017, 'Kristopher Maddigan', 'Honeycomb Herald');";
         qry = "INSERT INTO nuno(ID, ANIO, AUTOR, TITULO) VALUES (DEFAULT, ?, ?, ?)";
-        try(connection = ConnectionPool.getInstance().getConnection();
+        try(Ejercicio6.getInstance(connectionPool).getConnection();
         stmt = ) {
 
         }

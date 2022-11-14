@@ -17,17 +17,17 @@ public class Ejercicio1 {
         }
 
     }
-    public static void creaTabla(Connection connection, Statement stmt, String qry){
+    public static void creaTabla(Connection connection, Statement stmt, String qry, ConnectionPool connectionPool){
         qry = "CREATE TABLE public.PARTITURA(" +
                 "ID INT NOT NULL," +
                 "ANIO INT," +
                 "AUTOR CHARACTER VARYING(30)," +
                 "TITULO CHARACTER VARYING(30));";
-        try(connection = ConnectionPool.getInstance().getConnection();
+        try(Ejercicio6.getInstance(connectionPool).getConnection();
         stmt = connection.createStatement();) {
             stmt.executeUpdate(qry);
             System.out.println("Tabla creada");
-            ConnectionPool.getInstance().closeConnection(connection);
+            Ejercicio6.getInstance(connectionPool).closeConnection(connection);
         } catch (SQLException e) {
             e.printStackTrace();
         }
