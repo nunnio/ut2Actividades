@@ -9,37 +9,24 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         BasicDataSource bds = null;
-        String qry = null;
-        ConnectionPool connectionPool = null;
-        int sel;
+        PreparedStatement pstmt = null;
+        Statement stmt = null;
         ResultSet rs = null;
         Scanner sc = new Scanner(System.in);
-        Ejercicio6.ConnectionPool(bds, qry);
-        Ejercicio6.getInstance(connectionPool);
+        int sel;
+        String qry = null;
+
         try {
             Connection connection = DriverManager.getConnection("jdbc:postgresql://172.18.0.2:5432/nuno","root", "root");
-            PreparedStatement pstmt = null;
-            Statement stmt = null;
+            stmt = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
 
             System.out.println("Creando base de datos con nombre nuno...");
             Ejercicio1.creaBBDD();
             System.out.println("Creando tabla partitura...");
-            Ejercicio1.creaTabla(connection, stmt, qry, connectionPool);
-
-            Ejercicio2.menu();
-
+            Ejercicio1.creaTabla(connection, stmt, qry);
             System.out.println("Insertando information a tablas...");
-            Ejercicio2.insercion(connection, pstmt, qry, connectionPool);
-            qry = "SELECT * FROM nuno;";
-            rs = pstmt.executeQuery(qry);
-            rs.beforeFirst();
-            rs = pstmt.executeQuery(Ejercicio2.insercion1(connection, pstmt));
-            int n = 3;
-            while(n>0 && n<6){
-                System.out.println("Introduce la posición que desees cambiar");
-                n = sc.nextInt();
-            }
-            rs.absolute(n);
+            Ejercicio2.insercion(connection, pstmt, qry);
+            Ejercicio2.menu(stmt, rs, qry);
 
 
         } catch (SQLException e) {

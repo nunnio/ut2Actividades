@@ -1,7 +1,5 @@
 package com.nnh;
 
-import org.postgresql.jdbc2.optional.ConnectionPool;
-
 import java.sql.*;
 
 // En este ejercicio creamos la base de datos partituras. Para conectarme a ella lo haré en la clase Ejercicio01
@@ -17,17 +15,15 @@ public class Ejercicio1 {
         }
 
     }
-    public static void creaTabla(Connection connection, Statement stmt, String qry, ConnectionPool connectionPool){
+    public static void creaTabla(Connection connection, Statement stmt, String qry){
         qry = "CREATE TABLE public.PARTITURA(" +
                 "ID INT NOT NULL," +
                 "ANIO INT," +
                 "AUTOR CHARACTER VARYING(30)," +
                 "TITULO CHARACTER VARYING(30));";
-        try(Ejercicio6.getInstance(connectionPool).getConnection();
-        stmt = connection.createStatement();) {
+        try {
             stmt.executeUpdate(qry);
             System.out.println("Tabla creada");
-            Ejercicio6.getInstance(connectionPool).closeConnection(connection);
         } catch (SQLException e) {
             e.printStackTrace();
         }
