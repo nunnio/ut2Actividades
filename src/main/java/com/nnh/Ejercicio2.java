@@ -60,7 +60,6 @@ public class Ejercicio2 {
                 System.out.println(rs.getInt(2+" "));
                 System.out.println(rs.getString(3+" "));
                 System.out.println(rs.getString(4+" \n"));
-
             }
         }catch (SQLException e){
             e.printStackTrace();

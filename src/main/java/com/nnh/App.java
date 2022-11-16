@@ -19,7 +19,7 @@ public class App {
         try {
             Connection connection = DriverManager.getConnection("jdbc:postgresql://172.18.0.2:5432/nuno","root", "root");
             stmt = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
-
+            pstmt = connection.prepareStatement(String.valueOf(ResultSet.TYPE_SCROLL_INSENSITIVE), ResultSet.CONCUR_UPDATABLE);
             System.out.println("Creando base de datos con nombre nuno...");
             Ejercicio1.creaBBDD();
             System.out.println("Creando tabla partitura...");
@@ -27,6 +27,8 @@ public class App {
             System.out.println("Insertando information a tablas...");
             Ejercicio2.insercion(connection, pstmt, qry);
             Ejercicio2.menu(stmt, rs, qry);
+            Ejercicio3.insercionSusceptible(stmt, qry, rs);
+            Ejercicio3.insercionNoSusceptible(pstmt, qry, rs);
 
 
         } catch (SQLException e) {
