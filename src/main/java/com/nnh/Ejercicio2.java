@@ -23,6 +23,7 @@ public class Ejercicio2 {
         }
     }
     public static void introPart(Statement stmt, ResultSet rs, String qry){
+        qry = "INSERT INTO nuno(ID, ANIO, AUTOR, TITULO) VALUES (?, ?, ?, ?)";
         try {
             rs = stmt.executeQuery(qry);
             rs.moveToInsertRow();
