@@ -16,6 +16,7 @@ public class App {
         int sel;
         String qry = null;
         Connection connection = null;
+        CallableStatement cstmt = null;
 
         try {
             connection = DriverManager.getConnection("jdbc:postgresql://172.18.0.2:5432/nuno","root", "root");
@@ -31,6 +32,8 @@ public class App {
             Ejercicio3.insercionSusceptible(stmt, qry, rs);
             Ejercicio3.insercionNoSusceptible(pstmt, qry, rs);
             Ejercicio4.transaccion(stmt, qry, rs, connection);
+            Ejercicio5.funcion(qry, pstmt, connection, rs);
+            Ejercicio5.procedimiento(qry, cstmt, connection);
 
         } catch (SQLException e) {
             e.printStackTrace();
