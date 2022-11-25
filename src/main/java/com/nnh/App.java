@@ -26,6 +26,7 @@ public class App {
             Ejercicio1.creaBBDD();
             System.out.println("Creando tabla partitura...");
             Ejercicio1.creaTabla(connection, stmt, qry);
+
             System.out.println("Insertando information a tablas...");
             Ejercicio2.insercion(connection, pstmt, qry);
             Ejercicio2.menu(stmt, rs, qry);
@@ -39,7 +40,7 @@ public class App {
             e.printStackTrace();
         }finally {
             try {
-                rs.close();
+                //rs.close();
                 connection.close();
                 pstmt.close();
                 stmt.close();

@@ -8,26 +8,18 @@ public class Ejercicio2 {
     public static void menu(Statement stmt, ResultSet rs, String qry){
         int sel;
         sc = new Scanner(System.in);
-        while(true){
-            System.out.println("\n\t-- Menu result set --\n1- Introducir una partitura\n2- Mostrar una partitura\n3- Mostrar todas las partituras\n4- Editar la primera partitura\n5- Borrar la última partitura\n6- Salir");
-            sel = sc.nextInt();
-            qry = "SELECT * FROM nuno";
-            switch(sel){
-                case 1: introPart(stmt, rs, qry);break;
-                case 2: mostraPart(stmt, rs, qry);break;
-                case 3: mostraAll(stmt, rs, qry);break;
-                case 4: editaPart(stmt, rs, qry);break;
-                case 5: borraPart(stmt, rs, qry);break;
-                default: break;
-            }
-        }
+        introPart(stmt, rs, qry);
+        mostraPart(stmt, rs, qry);
+        mostraAll(stmt, rs, qry);
+        editaPart(stmt, rs, qry);
+        borraPart(stmt, rs, qry);
     }
     public static void introPart(Statement stmt, ResultSet rs, String qry){
         qry = "INSERT INTO nuno(ID, ANIO, AUTOR, TITULO) VALUES (?, ?, ?, ?)";
         try {
             rs = stmt.executeQuery(qry);
             rs.moveToInsertRow();
-            //rs.updateInt(1,600);
+            rs.updateInt(1,600);
             rs.updateInt(2, 3322);
             rs.updateString(3, "Tirano");
             rs.updateString(4, "Persuasive");
@@ -68,11 +60,12 @@ public class Ejercicio2 {
 
     }
     public static void editaPart(Statement stmt, ResultSet rs, String qry){
+        qry = "UPDATE nuno SET autor = ? WHERE  autor = 'Alfred Reed' ";
+
         try {
             rs = stmt.executeQuery(qry);
             rs.first();
-            rs.updateInt(2,2022);
-            rs.updateString(3,"SZA");
+            rs.updateString(1,"SZA");
             rs.updateRow();
             System.out.println("Partitura actualizada");
         } catch (SQLException e) {
